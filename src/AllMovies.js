@@ -1,9 +1,23 @@
 import './AllMovies.css'
+import MovieCard from './MovieCard'
 
-function AllMovies({data}) {
-  console.log(data)
+function AllMovies({movies}) {
+let allMovies = movies.movies.map(movie => {
   return (
-    <h2>hi!</h2>
+    <MovieCard 
+      id = {movie.id}
+      poster_path = {movie.poster_path}
+      title = {movie.title}
+      release_date = {movie.release_date}
+      key = {movie.id}
+
+    />
+  )
+})
+  return (
+    <div className='movieCard'>
+      {allMovies}
+    </div>
   )
 }
 
