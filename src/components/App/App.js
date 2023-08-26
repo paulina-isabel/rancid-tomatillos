@@ -1,8 +1,8 @@
 import './App.css';
-import movieData from './movieData.js';
+import movieData from '../../movieData.js';
 import {useState} from 'react'
-import AllMovies from './AllMovies.js'
-import MovieDetail from './components/MovieDetails/MovieDetail';
+import AllMovies from '../AllMovies/AllMovies.js'
+import MovieDetail from '../MovieDetails/MovieDetail';
 
 function App() {
   const movieDetail = {

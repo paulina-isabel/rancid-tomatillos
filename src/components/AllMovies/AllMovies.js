@@ -1,5 +1,5 @@
 import './AllMovies.css'
-import MovieCard from './MovieCard'
+import MovieCard from '../MovieCard/MovieCard'
 
 function AllMovies({movies}) {
 let allMovies = movies.movies.map(movie => {
