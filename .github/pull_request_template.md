@@ -1,4 +1,4 @@
-.github/pull_request_template.mdWhat I did:
+What I did:
 
 Testing Notes/Extras: 
 
