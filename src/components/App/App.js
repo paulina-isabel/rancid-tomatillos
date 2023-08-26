@@ -1,6 +1,6 @@
 import './App.css';
 import movieData from '../../movieData.js';
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import AllMovies from '../AllMovies/AllMovies.js'
 import MovieDetail from '../MovieDetails/MovieDetail';
 
@@ -10,6 +10,16 @@ const App = () => {
   const [singleMovieView, setSingleMovieView] = useState(false)
   const [selectedMovieDetails, setSelectedMovieDetails] = useState(null)
   
+const getAllMovieData = () => {
+  fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+    .then(response => response.json())
+    .then(data => console.log(data))
+}
+  useEffect(() => {
+    getAllMovieData()
+  },[])
+
+
   const handleClick = (id) => {
     let movie = movieData.movies.find(movie => {
       return movie.id === id
