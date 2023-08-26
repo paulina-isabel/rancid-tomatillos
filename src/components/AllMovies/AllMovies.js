@@ -17,7 +17,7 @@ const AllMovies = ({ movies, handleClick, goHome }) => {
   })
 
   return (
-    <div className='movieCard'>
+    <div className='card-container card-carousel'>
       {allMovies}
     </div>
   )
