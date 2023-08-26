@@ -1,4 +1,7 @@
 import './App.css';
+import movieData from './movieData.js';
+import {useState} from 'react'
+import AllMovies from './AllMovies.js'
 import MovieDetail from './components/MovieDetails/MovieDetail';
 
 function App() {
@@ -19,8 +22,12 @@ function App() {
     }
   }
 
+  const [movies, setMovies] = useState(movieData)
+  console.log(typeof movieData)
+  
   return (
     <div className="App">
+      <AllMovies movies={movies} />
       <MovieDetail movieDetail={movieDetail}/>
     </div>
   );
