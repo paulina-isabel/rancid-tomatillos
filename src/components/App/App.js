@@ -23,11 +23,22 @@ function App() {
   }
 
   const [movies, setMovies] = useState(movieData)
-  console.log(typeof movieData)
+
   
+  const handleClick = (id) => {
+    console.log(id, 'hi')
+    const selectedMovieId = id
+    console.log(movieData)
+    let movie = movieData.movies.find(movie => {
+      return movie.id === id
+    })
+    console.log(movie)
+  }
+
+
   return (
     <div className="App">
-      <AllMovies movies={movies} />
+      <AllMovies movies={movies} handleClick={handleClick}/>
       <MovieDetail movieDetail={movieDetail}/>
     </div>
   );

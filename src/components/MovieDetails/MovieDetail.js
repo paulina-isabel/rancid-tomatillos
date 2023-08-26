@@ -1,7 +1,6 @@
 import './MovieDetail.css'
 
 const MovieDetail = ({ movieDetail }) => {
-  console.log(movieDetail)
   const backgroundImageUrl = movieDetail.movie.backdrop_path
 
   const containerStyle = {
