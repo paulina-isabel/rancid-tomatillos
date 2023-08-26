@@ -1,7 +1,7 @@
 import './AllMovies.css'
 import MovieCard from '../MovieCard/MovieCard'
 
-function AllMovies({ movies, handleClick }) {
+function AllMovies({ movies, handleClick, goHome }) {
   
 
 
@@ -14,6 +14,7 @@ function AllMovies({ movies, handleClick }) {
         release_date={movie.release_date}
         key={movie.id}
         handleClick={handleClick}
+        goHome={goHome}
       />
     )
   })

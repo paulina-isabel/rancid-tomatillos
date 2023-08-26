@@ -23,7 +23,8 @@ function App() {
   }
 
   const [movies, setMovies] = useState(movieData)
-
+  const [allMoviesView, setAllMoviesView] = useState(true)
+  const [singeMovieView, setSingleMovieView] = useState(false)
   
   const handleClick = (id) => {
     console.log(id, 'hi')
@@ -33,13 +34,19 @@ function App() {
       return movie.id === id
     })
     console.log(movie)
+    setAllMoviesView(false)
+    setSingleMovieView(true)
+  }
+
+  const goHome = () => {
+    setAllMoviesView(true)
+    setSingleMovieView(false)
   }
 
 
   return (
     <div className="App">
-      <AllMovies movies={movies} handleClick={handleClick}/>
-      <MovieDetail movieDetail={movieDetail}/>
+      {allMoviesView ? <AllMovies movies={movies} handleClick={handleClick} goHome={goHome}/> : <MovieDetail movieDetail={movieDetail}/>}
     </div>
   );
 }
