@@ -1,10 +1,7 @@
 import './AllMovies.css'
 import MovieCard from '../MovieCard/MovieCard'
 
-function AllMovies({ movies, handleClick, goHome }) {
-  
-
-
+const AllMovies = ({ movies, handleClick, goHome }) => {
   const allMovies = movies.movies.map(movie => {
     return (
       <MovieCard 

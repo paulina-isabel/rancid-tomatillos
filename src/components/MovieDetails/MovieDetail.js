@@ -2,7 +2,6 @@ import './MovieDetail.css'
 
 const MovieDetail = ({ movieDetail, goHome }) => {
   const backgroundImageUrl = movieDetail.backdrop_path
-  console.log(movieDetail)
 
   const containerStyle = {
     backgroundImage: `url(${backgroundImageUrl})`,
