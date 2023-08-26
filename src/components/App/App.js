@@ -46,7 +46,7 @@ function App() {
 
   return (
     <div className="App">
-      {allMoviesView ? <AllMovies movies={movies} handleClick={handleClick} goHome={goHome}/> : <MovieDetail movieDetail={movieDetail}/>}
+      {allMoviesView ? <AllMovies movies={movies} handleClick={handleClick}/> : <MovieDetail movieDetail={movieDetail} goHome={goHome}/>}
     </div>
   );
 }
