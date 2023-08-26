@@ -24,11 +24,11 @@ function App() {
 
   const [movies, setMovies] = useState(movieData)
   const [allMoviesView, setAllMoviesView] = useState(true)
-  const [singeMovieView, setSingleMovieView] = useState(false)
+  const [singleMovieView, setSingleMovieView] = useState(false)
+  const [selectedMovieDetails, setSelectedMovieDetails] = useState(null)
   
   const handleClick = (id) => {
     console.log(id, 'hi')
-    const selectedMovieId = id
     console.log(movieData)
     let movie = movieData.movies.find(movie => {
       return movie.id === id
@@ -36,6 +36,7 @@ function App() {
     console.log(movie)
     setAllMoviesView(false)
     setSingleMovieView(true)
+    setSelectedMovieDetails(movie)
   }
 
   const goHome = () => {
@@ -46,7 +47,7 @@ function App() {
 
   return (
     <div className="App">
-      {allMoviesView ? <AllMovies movies={movies} handleClick={handleClick}/> : <MovieDetail movieDetail={movieDetail} goHome={goHome}/>}
+      {allMoviesView ? <AllMovies movies={movies} handleClick={handleClick}/> : <MovieDetail movieDetail={selectedMovieDetails} goHome={goHome}/>}
     </div>
   );
 }

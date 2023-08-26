@@ -1,7 +1,8 @@
 import './MovieDetail.css'
 
 const MovieDetail = ({ movieDetail, goHome }) => {
-  const backgroundImageUrl = movieDetail.movie.backdrop_path
+  const backgroundImageUrl = movieDetail.backdrop_path
+  console.log(movieDetail)
 
   const containerStyle = {
     backgroundImage: `url(${backgroundImageUrl})`,
@@ -14,10 +15,10 @@ const MovieDetail = ({ movieDetail, goHome }) => {
 
   return (
     <div style={containerStyle}>
-      <p className="title">{movieDetail.movie.title}</p>
-      <p>{movieDetail.movie.overview}</p>
-      <p>{movieDetail.movie.release_date}</p>
-      <p>Runtime: {movieDetail.movie.runtime}</p>
+      <p className="title">{movieDetail.title}</p>
+      {/* <p>{movieDetail.movie.overview}</p> */}
+      <p>{movieDetail.release_date}</p>
+      {/* <p>Runtime: {movieDetail.movie.runtime}</p> */}
       <button onClick={goHome}>Go Back Home</button>
     </div>
   )
