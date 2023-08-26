@@ -15,7 +15,7 @@ let allMovies = movies.movies.map(movie => {
   )
 })
   return (
-    <div className='card-container'>
+    <div className='card-container card-carousel'>
       {allMovies}
     </div>
   )

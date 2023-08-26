@@ -1,6 +1,6 @@
 .card {
   display: flex;
-  padding: 5vh;
+  padding: 4vh;
   width: 100%;
   height: 400px;
   grid-gap: 2em;

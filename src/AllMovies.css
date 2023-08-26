@@ -1,7 +1,14 @@
 .card-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 100px;
-  padding: 10vh;
+  grid-template-columns: repeat(8, 1fr);
+  /* grid-gap: 1px; */
+  /* padding: 1vh; */
   background-color: rgb(54, 50, 50)
+}
+
+.card-carousel {
+    overflow: hidden;
+    min-height: 700px;
+    padding-top: 6.25rem;
+    position: relative;
 }
