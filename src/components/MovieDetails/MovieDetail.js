@@ -1,5 +1,6 @@
 import './MovieDetail.css'
 import {useState, useEffect} from 'react'
+import PropTypes from 'prop-types';
 
 const MovieDetail = ({ goHome, selectedMovieId }) => {
   const [selectedMovieDetails, setSelectedMovieDetails] = useState({})

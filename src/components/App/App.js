@@ -3,6 +3,7 @@ import movieData from '../../movieData.js';
 import {useState, useEffect} from 'react'
 import AllMovies from '../AllMovies/AllMovies.js'
 import MovieDetail from '../MovieDetails/MovieDetail';
+import PropTypes from 'prop-types';
 
 const App = () => {
   const [movies, setMovies] = useState(movieData)

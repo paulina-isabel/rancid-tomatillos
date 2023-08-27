@@ -1,4 +1,5 @@
 import './MovieCard.css'
+import PropTypes from 'prop-types';
 
 const MovieCard = ({handleClick, id, poster_path, title, release_date}) => {
   return (
