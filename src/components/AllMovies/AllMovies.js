@@ -1,5 +1,6 @@
 import './AllMovies.css'
 import MovieCard from '../MovieCard/MovieCard'
+import PropTypes from 'prop-types';
 
 const AllMovies = ({ movies, handleClick, goHome }) => {
   const allMovies = movies.movies.map(movie => {
@@ -24,3 +25,9 @@ const AllMovies = ({ movies, handleClick, goHome }) => {
 }
 
 export default AllMovies
+
+AllMovies.propTypes = {
+  movies: PropTypes.object,
+  handleClick: PropTypes.func,
+  goHome: PropTypes.func
+}

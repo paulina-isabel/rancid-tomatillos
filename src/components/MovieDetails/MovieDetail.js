@@ -43,3 +43,8 @@ const MovieDetail = ({ goHome, selectedMovieId }) => {
 
 
 export default MovieDetail
+
+MovieDetail.propTypes = {
+  goHome: PropTypes.func,
+  selectedMovieId: PropTypes.number
+}

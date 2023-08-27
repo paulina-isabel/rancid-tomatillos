@@ -3,7 +3,6 @@ import movieData from '../../movieData.js';
 import {useState, useEffect} from 'react'
 import AllMovies from '../AllMovies/AllMovies.js'
 import MovieDetail from '../MovieDetails/MovieDetail';
-import PropTypes from 'prop-types';
 
 const App = () => {
   const [movies, setMovies] = useState(movieData)
@@ -35,7 +34,7 @@ const [selectedMovieId, setSelectedMovieId] = useState(null)
 
   return (
     <div className="App">
-      {allMoviesView ? <AllMovies movies={movies} handleClick={handleClick}/> : <MovieDetail goHome={goHome} selectedMovieId={selectedMovieId}/> }
+      {allMoviesView ? <AllMovies movies={movies} handleClick={handleClick} goHome={goHome}/> : <MovieDetail goHome={goHome} selectedMovieId={selectedMovieId}/> }
     </div>
   );
 }

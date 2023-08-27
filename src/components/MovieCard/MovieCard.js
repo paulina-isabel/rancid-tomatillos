@@ -13,3 +13,11 @@ const MovieCard = ({handleClick, id, poster_path, title, release_date}) => {
 }
 
 export default MovieCard
+
+MovieCard.propTypes = {
+  handleClick: PropTypes.func,
+  id: PropTypes.number,
+  poster_path: PropTypes.string,
+  title: PropTypes.string,
+  release_date: PropTypes.string
+}
