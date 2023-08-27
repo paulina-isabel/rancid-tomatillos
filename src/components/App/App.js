@@ -1,34 +1,54 @@
-import './App.css';
-import movieData from '../../movieData.js';
-import {useState} from 'react'
-import AllMovies from '../AllMovies/AllMovies.js'
-import MovieDetail from '../MovieDetails/MovieDetail';
+import "./App.css";
+import movieData from "../../movieData.js";
+import { useState, useEffect } from "react";
+import AllMovies from "../AllMovies/AllMovies.js";
+import MovieDetail from "../MovieDetails/MovieDetail";
 
 const App = () => {
-  const [movies, setMovies] = useState(movieData)
-  const [allMoviesView, setAllMoviesView] = useState(true)
-  const [singleMovieView, setSingleMovieView] = useState(false)
-  const [selectedMovieDetails, setSelectedMovieDetails] = useState(null)
-  
+  const [movies, setMovies] = useState(movieData);
+  const [allMoviesView, setAllMoviesView] = useState(true);
+  const [singleMovieView, setSingleMovieView] = useState(false);
+  const [error, setError] = useState(false);
+
+  const getAllMovieData = () => {
+    fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Server returned " + response.status);
+        }
+        return response.json();
+      })
+      .then((data) => setMovies(data))
+      .catch((error) => {
+        setError(true);
+      });
+  };
+  useEffect(() => {
+    getAllMovieData();
+  }, []);
+
+  const [selectedMovieId, setSelectedMovieId] = useState(null);
+
   const handleClick = (id) => {
-    let movie = movieData.movies.find(movie => {
-      return movie.id === id
-    })
-    setAllMoviesView(false)
-    setSingleMovieView(true)
-    setSelectedMovieDetails(movie)
-  }
+    setSelectedMovieId(id);
+    setAllMoviesView(false);
+    setSingleMovieView(true);
+  };
 
   const goHome = () => {
-    setAllMoviesView(true)
-    setSingleMovieView(false)
-  }
+    setAllMoviesView(true);
+    setSingleMovieView(false);
+  };
 
   return (
     <div className="App">
-      {allMoviesView ? <AllMovies movies={movies} handleClick={handleClick}/> : <MovieDetail movieDetail={selectedMovieDetails} goHome={goHome}/>}
+      {allMoviesView ? (
+        <AllMovies movies={movies} handleClick={handleClick} />
+      ) : (
+        <MovieDetail goHome={goHome} selectedMovieId={selectedMovieId} />
+      )}
     </div>
   );
-}
+};
 
 export default App;

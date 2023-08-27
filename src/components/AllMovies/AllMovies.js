@@ -1,5 +1,6 @@
 import './AllMovies.css'
 import MovieCard from '../MovieCard/MovieCard'
+import PropTypes from 'prop-types';
 
 const AllMovies = ({ movies, handleClick, goHome }) => {
   const allMovies = movies.movies.map(movie => {
@@ -17,10 +18,16 @@ const AllMovies = ({ movies, handleClick, goHome }) => {
   })
 
   return (
-    <div className='card-container card-carousel'>
+    <div className='card-container'>
       {allMovies}
     </div>
   )
 }
 
 export default AllMovies
+
+AllMovies.propTypes = {
+  movies: PropTypes.object,
+  handleClick: PropTypes.func,
+  goHome: PropTypes.func
+}

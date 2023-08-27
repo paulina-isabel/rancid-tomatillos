@@ -1,14 +1,5 @@
 .card-container {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  /* grid-gap: 1px; */
-  /* padding: 1vh; */
+  display: flex;
+  flex-wrap: wrap;
   background-color: rgb(5, 4, 4)
 }
-
-/* .card-carousel {
-    overflow: hidden;
-    min-height: 700px;
-    padding-top: 6.25rem;
-    position: relative;
-} */
