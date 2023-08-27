@@ -33,7 +33,7 @@ const MovieDetail = ({ goHome, selectedMovieId }) => {
 
     return (
       <div style={containerStyle}>
-      {detailsLoading ? <p>Loading</p> : <><button onClick={goHome}>Go Back Home</button> <p className="title"></p></>}
+      {detailsLoading ? <p>Loading</p> : <><button onClick={goHome}>Go Back Home</button> <p className="title"></p>{selectedMovieDetails.title}</>}
       <p>{selectedMovieDetails.overview}</p>
       <p>{selectedMovieDetails.release_date}</p>
       <p>Runtime: {selectedMovieDetails.runtime}</p>
