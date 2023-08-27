@@ -8,25 +8,23 @@ const App = () => {
   const [movies, setMovies] = useState(movieData)
   const [allMoviesView, setAllMoviesView] = useState(true)
   const [singleMovieView, setSingleMovieView] = useState(false)
-  const [selectedMovieDetails, setSelectedMovieDetails] = useState(null)
   
 const getAllMovieData = () => {
   fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
     .then(response => response.json())
-    .then(data => console.log(data))
+    .then(data => setMovies(data))
 }
   useEffect(() => {
     getAllMovieData()
   },[])
 
+const [selectedMovieId, setSelectedMovieId] = useState(null)
 
   const handleClick = (id) => {
-    let movie = movieData.movies.find(movie => {
-      return movie.id === id
-    })
+    setSelectedMovieId(id)
     setAllMoviesView(false)
     setSingleMovieView(true)
-    setSelectedMovieDetails(movie)
+    // setSelectedMovieDetails(movie)
   }
 
   const goHome = () => {
@@ -36,7 +34,7 @@ const getAllMovieData = () => {
 
   return (
     <div className="App">
-      {allMoviesView ? <AllMovies movies={movies} handleClick={handleClick}/> : <MovieDetail movieDetail={selectedMovieDetails} goHome={goHome}/>}
+      {allMoviesView ? <AllMovies movies={movies} handleClick={handleClick}/> : <MovieDetail goHome={goHome} selectedMovieId={selectedMovieId}/> }
     </div>
   );
 }
