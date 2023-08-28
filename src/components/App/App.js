@@ -9,6 +9,7 @@ const App = () => {
   const [allMoviesView, setAllMoviesView] = useState(true);
   const [singleMovieView, setSingleMovieView] = useState(false);
   const [error, setError] = useState(false);
+  const [selectedMovieId, setSelectedMovieId] = useState(null);
 
   const getAllMovieData = () => {
     fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
@@ -27,7 +28,6 @@ const App = () => {
     getAllMovieData();
   }, []);
 
-  const [selectedMovieId, setSelectedMovieId] = useState(null);
 
   const handleClick = (id) => {
     setSelectedMovieId(id);

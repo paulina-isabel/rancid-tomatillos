@@ -8,9 +8,7 @@ const MovieDetail = ({ goHome, selectedMovieId }) => {
   const [detailsError, setDetailsError] = useState(false);
 
   const getSingleMovieData = (selectedMovieId) => {
-    fetch(
-      `https://rancid-tomatillos.herokuapp.com/api/v2/movies/${selectedMovieId}`
-    )
+    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${selectedMovieId}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Server returned " + response.status);
@@ -18,13 +16,12 @@ const MovieDetail = ({ goHome, selectedMovieId }) => {
         return response.json();
       })
       .then((data) => {
-        const movieStuff = data.movie;
-        setSelectedMovieDetails(movieStuff);
-        console.log("yeehaw", data);
+        setSelectedMovieDetails(data.movie);
+        setDetailsLoading(false)
+      })
+      .catch((error) => {
+        setDetailsError(true);
       });
-    setDetailsLoading(false).catch((error) => {
-      setDetailsError(true);
-    });
   };
 
   useEffect(() => {
@@ -45,7 +42,7 @@ const MovieDetail = ({ goHome, selectedMovieId }) => {
   return (
     <div style={containerStyle}>
       {detailsLoading ? (
-        <p>Loading</p>
+        <p>Loading...</p>
       ) : (
         <>
           <button onClick={goHome}>Go Back Home</button>{" "}
