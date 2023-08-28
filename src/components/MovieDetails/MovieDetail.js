@@ -16,7 +16,6 @@ const MovieDetail = ({ goHome, selectedMovieId }) => {
         return response.json();
       })
       .then((data) => {
-        // const movieStuff = data.movie;
         setSelectedMovieDetails(data.movie);
         setDetailsLoading(false)
       })
@@ -43,7 +42,7 @@ const MovieDetail = ({ goHome, selectedMovieId }) => {
   return (
     <div style={containerStyle}>
       {detailsLoading ? (
-        <p>Loading</p>
+        <p>Loading...</p>
       ) : (
         <>
           <button onClick={goHome}>Go Back Home</button>{" "}
