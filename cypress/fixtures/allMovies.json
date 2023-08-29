@@ -1,0 +1,36 @@
+{
+    "movies": [
+      {
+        "id": 1001835,
+        "poster_path": "https://image.tmdb.org/t/p/original//tea2gDZPxw0wfKC2S2VRWHagtt4.jpg",
+        "backdrop_path": "https://image.tmdb.org/t/p/original//3xvdNyZ9WsVJpyeGhm85fukeZz4.jpg",
+        "title": "Wifelike",
+        "average_rating": 6,
+        "release_date": "2022-08-12"
+    },
+    {
+        "id": 924482,
+        "poster_path": "https://image.tmdb.org/t/p/original//S99eCSnRFfeZJmDaIGIZF58H7w.jpg",
+        "backdrop_path": "https://image.tmdb.org/t/p/original//jazlkwXfw4KdF6fVTRsolOvRCmu.jpg",
+        "title": "The Ledge",
+        "average_rating": 6,
+        "release_date": "2022-02-18"
+    },
+    {
+        "id": 877269,
+        "poster_path": "https://image.tmdb.org/t/p/original//4H7dRko04LGUaDLHiVwSh4gv61S.jpg",
+        "backdrop_path": "https://image.tmdb.org/t/p/original//5wDBVictj4wUYZ31gR5WzCM9dLD.jpg",
+        "title": "Strange World",
+        "average_rating": 1,
+        "release_date": "2022-11-23"
+    },
+    {
+        "id": 760104,
+        "poster_path": "https://image.tmdb.org/t/p/original//woTQx9Q4b8aO13jR9dsj8C9JESy.jpg",
+        "backdrop_path": "https://image.tmdb.org/t/p/original//70Rm9ItxKuEKN8iu6rNjfwAYUCJ.jpg",
+        "title": "X",
+        "average_rating": 1,
+        "release_date": "2022-03-17"
+    }
+  ]
+}
