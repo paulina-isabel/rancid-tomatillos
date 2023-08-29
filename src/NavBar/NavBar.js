@@ -1,12 +1,15 @@
 import './NavBar.css'
 import header from '../images/header.png'
+import popcorn from '../images/popcorn.png'
 
 const NavBar = () => {
   return (
-    <>
-      <img src={header} ></img>
-      <div>Welcome, tomatilloer!</div>
-    </>
+    <div style={{backgroundColor: 'black'}}>
+      <div className='login'>
+        <img src={popcorn} className='popcorn' alt='popcorn user icon'/>Welcome, tomatilloer!
+      </div>
+      <img src={header} name='header' alt='header'/>
+    </div>
   )
 }
 
