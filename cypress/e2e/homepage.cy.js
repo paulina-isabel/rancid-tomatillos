@@ -20,4 +20,7 @@ describe('landing page', () => {
       cy.contains('h3', '2022')
     })
   })
+
+  // 
+
 })

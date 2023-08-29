@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const MovieCard = ({ handleClick, id, poster_path, title, release_date }) => {
   return (
     <div className="card" onClick={() => handleClick(id)} id={id}>
-      <img className="image" src={poster_path} name="movie-poster"/>
+      <img className="image" src={poster_path} name="movie-poster" alt={title}/>
       <h2>{title}</h2>
       <h3>{release_date}</h3>
     </div>

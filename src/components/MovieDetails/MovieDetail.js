@@ -26,7 +26,7 @@ const MovieDetail = ({ goHome, selectedMovieId }) => {
 
   useEffect(() => {
     getSingleMovieData(selectedMovieId);
-  }, []);
+  }, [selectedMovieId]);
 
   const backgroundImageUrl = selectedMovieDetails.backdrop_path;
 
@@ -41,6 +41,7 @@ const MovieDetail = ({ goHome, selectedMovieId }) => {
 
   return (
     <div style={containerStyle}>
+      {detailsError ? <p>uh oh</p> : <p>all good</p>}
       {detailsLoading ? (
         <p>Loading...</p>
       ) : (
