@@ -3,7 +3,7 @@ import movieData from "../../movieData.js";
 import { useState, useEffect } from "react";
 import AllMovies from "../AllMovies/AllMovies.js";
 import MovieDetail from "../MovieDetails/MovieDetail";
-import NavBar from "../../NavBar/NavBar";
+import NavBar from "../NavBar/NavBar";
 
 const App = () => {
   const [movies, setMovies] = useState(movieData);

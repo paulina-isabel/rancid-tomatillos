@@ -1,6 +1,6 @@
 import './NavBar.css'
-import header from '../images/header.png'
-import popcorn from '../images/popcorn.png'
+import header from '../../images/header.png'
+import popcorn from '../../images/popcorn.png'
 
 const NavBar = () => {
   return (

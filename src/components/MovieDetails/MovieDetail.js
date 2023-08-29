@@ -31,7 +31,7 @@ const MovieDetail = ({ goHome, selectedMovieId }) => {
   const backgroundImageUrl = selectedMovieDetails.backdrop_path;
 
   const containerStyle = {
-    position: "relative", // Set position to allow layering
+    position: "relative",
     height: "100vh",
     backgroundImage: `url(${backgroundImageUrl})`,
     backgroundSize: "cover",
@@ -40,7 +40,7 @@ const MovieDetail = ({ goHome, selectedMovieId }) => {
   };
   
   const gradientOverlayStyle = {
-    position: "absolute", // Position the gradient overlay absolutely within the container
+    position: "absolute",
     top: 0,
     left: 0,
     width: "100%",
