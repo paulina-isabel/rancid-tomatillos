@@ -8,7 +8,7 @@ const NavBar = () => {
       <div className='login'>
         <img src={popcorn} className='popcorn' alt='popcorn user icon'/>Welcome, tomatilloer!
       </div>
-      <img src={header} name='header' alt='header'/>
+      <img src={header} className='header' name='header' alt='header'/>
     </div>
   )
 }

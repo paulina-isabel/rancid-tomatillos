@@ -3,6 +3,10 @@
   height: 30px;
 }
 
+.header {
+  height: 10vh;
+}
+
 .navbar {
   background-color: black;
   display: flex;

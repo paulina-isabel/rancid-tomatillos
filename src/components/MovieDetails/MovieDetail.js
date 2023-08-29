@@ -31,28 +31,40 @@ const MovieDetail = ({ goHome, selectedMovieId }) => {
   const backgroundImageUrl = selectedMovieDetails.backdrop_path;
 
   const containerStyle = {
-    backgroundImage: `url(${backgroundImageUrl})`,
+    position: "relative", // Set position to allow layering
     height: "100vh",
+    backgroundImage: `url(${backgroundImageUrl})`,
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundAttachment: "fixed",
+  };
+  
+  const gradientOverlayStyle = {
+    position: "absolute", // Position the gradient overlay absolutely within the container
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
     backgroundColor: "rgba(0, 0, 0, 0.2)",
+    backgroundImage: "linear-gradient(to bottom, #000000, transparent)",
   };
 
   return (
     <div style={containerStyle}>
-      {detailsError ? <p>uh oh</p> : <p>all good</p>}
-      {detailsLoading ? (
-        <p>Loading...</p>
-      ) : (
-        <>
-          <button onClick={goHome}>Go Back Home</button>{" "}
-          <p className="title"></p>
-        </>
-      )}
-      <p>{selectedMovieDetails.overview}</p>
-      <p>{selectedMovieDetails.release_date}</p>
-      <p>Runtime: {selectedMovieDetails.runtime}</p>
+      <div style={gradientOverlayStyle}>
+        {detailsError ? <p>uh oh</p> : <p>all good</p>}
+        {detailsLoading ? (
+          <p>Loading...</p>
+        ) : (
+          <>
+            <button onClick={goHome}>Go Back Home</button>{" "}
+            <p className="title"></p>
+          </>
+        )}
+        <p>{selectedMovieDetails.overview}</p>
+        <p>{selectedMovieDetails.release_date}</p>
+        <p>Runtime: {selectedMovieDetails.runtime}</p>
+      </div>
     </div>
   );
 };
