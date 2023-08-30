@@ -52,7 +52,7 @@ const MovieDetail = ({ goHome, selectedMovieId }) => {
   return (
     <div style={containerStyle}>
       <div style={gradientOverlayStyle}>
-        {detailsError ? <p>uh oh</p> : <p>all good</p>}
+        {/* {detailsError ? <p>uh oh</p>} */}
         {detailsLoading ? (
           <p>Loading...</p>
         ) : (
