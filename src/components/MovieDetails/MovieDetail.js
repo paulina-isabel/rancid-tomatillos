@@ -59,11 +59,11 @@ const MovieDetail = ({ goHome, selectedMovieId }) => {
           <>
             <button onClick={goHome}>Go Back Home</button>{" "}
             <p className="title"></p>
+            <p>{selectedMovieDetails.overview}</p>
+            <p>{selectedMovieDetails.release_date}</p>
+            <p>Runtime: {selectedMovieDetails.runtime}</p>
           </>
         )}
-        <p>{selectedMovieDetails.overview}</p>
-        <p>{selectedMovieDetails.release_date}</p>
-        <p>Runtime: {selectedMovieDetails.runtime}</p>
       </div>
     </div>
   );

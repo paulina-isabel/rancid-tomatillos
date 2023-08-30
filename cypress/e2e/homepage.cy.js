@@ -11,16 +11,15 @@ describe('landing page', () => {
     cy.location('pathname').should('eq', '/')
     cy.get('.card').first().within(() => {
       cy.get('img[name=movie-poster]').should('exist')
-      cy.contains('h2', 'Wifelike')
-      cy.contains('h3', '2022')
+      cy.contains('h2', 'Wifelike (2022')
+      cy.contains('h3', '6/10')
+      cy.get('.star').should('exist')
     })
     cy.get('.card').last().within(() => {
       cy.get('img[name=movie-poster]').should('exist')
-      cy.contains('h2', 'X')
-      cy.contains('h3', '2022')
+      cy.contains('h2', 'X (2022')
+      cy.contains('h3', '1/10')
+      cy.get('.star').should('exist')
     })
   })
-
-  // 
-
 })
