@@ -24,7 +24,7 @@ describe("navigate to individual movie", () => {
     cy.contains("p", "In 1979");
     cy.contains("p", "2022");
     cy.contains("p", "Runtime:");
-    cy.contains("button", "Go Back Home").click();
+    cy.get(".arrow").click();
     cy.get(".card-container").find(".card").should("have.length", 4);
   });
 });
