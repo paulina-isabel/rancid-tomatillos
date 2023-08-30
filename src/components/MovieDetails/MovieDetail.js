@@ -1,8 +1,10 @@
 import "./MovieDetail.css";
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
+import arrow from '../../images/arrow.png'
+import { Link } from 'react-router-dom';
 
-const MovieDetail = ({ goHome, selectedMovieId }) => {
+const MovieDetail = ({ selectedMovieId }) => {
   const [selectedMovieDetails, setSelectedMovieDetails] = useState({});
   const [detailsLoading, setDetailsLoading] = useState(true);
   const [detailsError, setDetailsError] = useState(false);
@@ -57,11 +59,13 @@ const MovieDetail = ({ goHome, selectedMovieId }) => {
           <p>Loading...</p>
         ) : (
           <>
-            <button onClick={goHome}>Go Back Home</button>{" "}
+          <Link to="/">
+            <img src={arrow} className='arrow' alt='back arrow icon'/>
+          </Link>
             <p className="title"></p>
             <p>{selectedMovieDetails.overview}</p>
             <p>{selectedMovieDetails.release_date}</p>
-            <p>Runtime: {selectedMovieDetails.runtime}</p>
+            <p>Runtime: {selectedMovieDetails.runtime} minutes</p>
           </>
         )}
       </div>

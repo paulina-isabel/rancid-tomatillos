@@ -4,12 +4,10 @@ import { useState, useEffect } from "react";
 import AllMovies from "../AllMovies/AllMovies.js";
 import MovieDetail from "../MovieDetails/MovieDetail";
 import NavBar from "../NavBar/NavBar";
-import { Routes, Route, useParams } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 const App = () => {
   const [movies, setMovies] = useState(movieData);
-  const [allMoviesView, setAllMoviesView] = useState(true);
-  // const [singleMovieView, setSingleMovieView] = useState(false);
   const [error, setError] = useState(false);
   const [selectedMovieId, setSelectedMovieId] = useState(null);
 
@@ -26,21 +24,13 @@ const App = () => {
         setError(true);
       });
   };
+
   useEffect(() => {
     getAllMovieData();
   }, []);
 
-
   const handleClick = (id) => {
     setSelectedMovieId(id);
-    // setAllMoviesView(false);
-    console.log('hi')
-    // setSingleMovieView(true);
-  };
-
-  const goHome = () => {
-    setAllMoviesView(true);
-    // setSingleMovieView(false);
   };
 
   return (
@@ -48,7 +38,7 @@ const App = () => {
       <NavBar />
       <Routes>
         <Route path="/" element={<AllMovies movies={movies} handleClick={handleClick} />}/>
-        <Route path="/:id" element={<MovieDetail goHome={goHome} selectedMovieId={selectedMovieId} />}/>
+        <Route path="/:id" element={<MovieDetail selectedMovieId={selectedMovieId} />}/>
       </Routes>
     </div>
   );
