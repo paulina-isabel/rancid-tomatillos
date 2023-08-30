@@ -10,22 +10,9 @@ const MovieDetail = () => {
 
   const selectedId = useParams().id;
   const backgroundImageUrl = selectedMovieDetails.backdrop_path;
+
   const containerStyle = {
-    position: "relative",
-    height: "100vh",
     backgroundImage: `url(${backgroundImageUrl})`,
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
-    backgroundAttachment: "fixed",
-  };
-  const gradientOverlayStyle = {
-    position: "absolute",
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
-    backgroundColor: "rgba(0, 0, 0, 0.2)",
-    backgroundImage: "linear-gradient(to bottom, #000000, transparent)",
   };
 
   const getSingleMovieData = (movieId) => {
@@ -50,8 +37,8 @@ const MovieDetail = () => {
   }, [selectedId]);
 
   return (
-    <div style={containerStyle}>
-      <div style={gradientOverlayStyle}>
+    <div className="movie-detail-card" style={containerStyle}>
+      <div className="overlay" >
         {/* {detailsError ? <p>uh oh</p>} */}
         {detailsLoading ? (
           <p>Loading...</p>
