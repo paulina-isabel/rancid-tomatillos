@@ -22,12 +22,11 @@ describe("navigate to individual movie", () => {
     cy.location('pathname').should('eq', '/');
     cy.get(".card-container").find(".card").should("have.length", 4);
     cy.get(".card").last().click();
+    cy.location('pathname').should('eq', '/760104');
     cy.contains("p", "In 1979");
     cy.contains("p", "2022");
     cy.contains("p", "Runtime:");
-    // cy.location('pathname').should('eq', '/760104');
-    cy.contains("button", "Go Back Home").click();
+    cy.get(".arrow").click();
     cy.get(".card-container").find(".card").should("have.length", 4);
-    cy.location('pathname').should('eq', '/');
   });
 });
