@@ -7,7 +7,8 @@ import NavBar from "../NavBar/NavBar";
 import { Routes, Route } from 'react-router-dom';
 
 const App = () => {
-  const [movies, setMovies] = useState(movieData);
+  const [movies, setMovies] = useState({});
+  const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false);
 
   const getAllMovieData = () => {
@@ -18,7 +19,10 @@ const App = () => {
         }
         return response.json();
       })
-      .then((data) => setMovies(data))
+      .then((data) => {
+        setMovies(data)
+        setLoading(false)
+      })
       .catch((error) => {
         setError(true);
       });
@@ -31,10 +35,14 @@ const App = () => {
   return (
     <div className="App">
       <NavBar />
+      {loading ? (
+        <p>Loading...</p>
+       ) : (
       <Routes>
         <Route path="/" element={<AllMovies movies={movies} />}/>
         <Route path="/:id" element={<MovieDetail />}/>
       </Routes>
+      )}
     </div>
   );
 };
