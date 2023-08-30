@@ -9,7 +9,6 @@ import { Routes, Route } from 'react-router-dom';
 const App = () => {
   const [movies, setMovies] = useState(movieData);
   const [error, setError] = useState(false);
-  const [selectedMovieId, setSelectedMovieId] = useState(null);
 
   const getAllMovieData = () => {
     fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
@@ -29,16 +28,12 @@ const App = () => {
     getAllMovieData();
   }, []);
 
-  const handleClick = (id) => {
-    setSelectedMovieId(id);
-  };
-
   return (
     <div className="App">
       <NavBar />
       <Routes>
-        <Route path="/" element={<AllMovies movies={movies} handleClick={handleClick} />}/>
-        <Route path="/:id" element={<MovieDetail selectedMovieId={selectedMovieId} />}/>
+        <Route path="/" element={<AllMovies movies={movies} />}/>
+        <Route path="/:id" element={<MovieDetail />}/>
       </Routes>
     </div>
   );

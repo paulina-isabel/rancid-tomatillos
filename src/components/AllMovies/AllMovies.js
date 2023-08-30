@@ -3,7 +3,6 @@ import MovieCard from '../MovieCard/MovieCard'
 import PropTypes from 'prop-types';
 
 const AllMovies = ({ movies, handleClick, goHome }) => {
-  console.log(movies)
   const allMovies = movies.movies.map(movie => {
     return (
       <MovieCard 

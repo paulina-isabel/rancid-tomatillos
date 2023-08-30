@@ -1,16 +1,35 @@
 import "./MovieDetail.css";
 import { useState, useEffect } from "react";
-import PropTypes from "prop-types";
 import arrow from '../../images/arrow.png'
-import { Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
-const MovieDetail = ({ selectedMovieId }) => {
+const MovieDetail = () => {
   const [selectedMovieDetails, setSelectedMovieDetails] = useState({});
   const [detailsLoading, setDetailsLoading] = useState(true);
   const [detailsError, setDetailsError] = useState(false);
 
-  const getSingleMovieData = (selectedMovieId) => {
-    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${selectedMovieId}`)
+  const selectedId = useParams().id;
+  const backgroundImageUrl = selectedMovieDetails.backdrop_path;
+  const containerStyle = {
+    position: "relative",
+    height: "100vh",
+    backgroundImage: `url(${backgroundImageUrl})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundAttachment: "fixed",
+  };
+  const gradientOverlayStyle = {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    backgroundColor: "rgba(0, 0, 0, 0.2)",
+    backgroundImage: "linear-gradient(to bottom, #000000, transparent)",
+  };
+
+  const getSingleMovieData = (movieId) => {
+    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${movieId}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Server returned " + response.status);
@@ -27,29 +46,8 @@ const MovieDetail = ({ selectedMovieId }) => {
   };
 
   useEffect(() => {
-    getSingleMovieData(selectedMovieId);
-  }, [selectedMovieId]);
-
-  const backgroundImageUrl = selectedMovieDetails.backdrop_path;
-
-  const containerStyle = {
-    position: "relative",
-    height: "100vh",
-    backgroundImage: `url(${backgroundImageUrl})`,
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
-    backgroundAttachment: "fixed",
-  };
-  
-  const gradientOverlayStyle = {
-    position: "absolute",
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
-    backgroundColor: "rgba(0, 0, 0, 0.2)",
-    backgroundImage: "linear-gradient(to bottom, #000000, transparent)",
-  };
+    getSingleMovieData(selectedId);
+  }, [selectedId]);
 
   return (
     <div style={containerStyle}>
@@ -74,9 +72,3 @@ const MovieDetail = ({ selectedMovieId }) => {
 };
 
 export default MovieDetail;
-
-
-MovieDetail.propTypes = {
-  goHome: PropTypes.func,
-  selectedMovieId: PropTypes.number
-}
