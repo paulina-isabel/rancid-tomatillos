@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import AllMovies from "../AllMovies/AllMovies.js";
 import MovieDetail from "../MovieDetails/MovieDetail";
 import NavBar from "../NavBar/NavBar";
+import { Routes, Route, useParams } from 'react-router-dom';
 
 const App = () => {
   const [movies, setMovies] = useState(movieData);
@@ -32,7 +33,8 @@ const App = () => {
 
   const handleClick = (id) => {
     setSelectedMovieId(id);
-    setAllMoviesView(false);
+    // setAllMoviesView(false);
+    console.log('hi')
     // setSingleMovieView(true);
   };
 
@@ -44,11 +46,10 @@ const App = () => {
   return (
     <div className="App">
       <NavBar />
-      {allMoviesView ? (
-        <AllMovies movies={movies} handleClick={handleClick} />
-      ) : (
-        <MovieDetail goHome={goHome} selectedMovieId={selectedMovieId} />
-      )}
+      <Routes>
+        <Route path="/" element={<AllMovies movies={movies} handleClick={handleClick} />}/>
+        <Route path="/:id" element={<MovieDetail goHome={goHome} selectedMovieId={selectedMovieId} />}/>
+      </Routes>
     </div>
   );
 };
