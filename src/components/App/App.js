@@ -3,11 +3,12 @@ import movieData from "../../movieData.js";
 import { useState, useEffect } from "react";
 import AllMovies from "../AllMovies/AllMovies.js";
 import MovieDetail from "../MovieDetails/MovieDetail";
+import NavBar from "../NavBar/NavBar";
 
 const App = () => {
   const [movies, setMovies] = useState(movieData);
   const [allMoviesView, setAllMoviesView] = useState(true);
-  const [singleMovieView, setSingleMovieView] = useState(false);
+  // const [singleMovieView, setSingleMovieView] = useState(false);
   const [error, setError] = useState(false);
   const [selectedMovieId, setSelectedMovieId] = useState(null);
 
@@ -32,16 +33,17 @@ const App = () => {
   const handleClick = (id) => {
     setSelectedMovieId(id);
     setAllMoviesView(false);
-    setSingleMovieView(true);
+    // setSingleMovieView(true);
   };
 
   const goHome = () => {
     setAllMoviesView(true);
-    setSingleMovieView(false);
+    // setSingleMovieView(false);
   };
 
   return (
     <div className="App">
+      <NavBar />
       {allMoviesView ? (
         <AllMovies movies={movies} handleClick={handleClick} />
       ) : (

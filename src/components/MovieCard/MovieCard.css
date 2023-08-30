@@ -5,25 +5,29 @@
   padding: 4vh;
   cursor: pointer;
   max-width: 15vw;
+  position: relative;
+  overflow: hidden;
 }
 
-.image:hover {
+.card:hover .image {
   transform: scale(1.1);
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4)
+}
+
+.card:hover *:not(.image) {
+  transform: scale(1.1);
 }
 
 .image {
   height: 350px;
-  transition: transform 0.3s box-shadow 0.3s;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-}
-
-h2 {
-  margin: 0;
-  color: white;
 }
 
 h3 {
   margin: 0;
-  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.star{
+  color: aliceblue;
+  height: 23px;
 }
