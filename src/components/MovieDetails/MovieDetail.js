@@ -50,6 +50,7 @@ const MovieDetail = ({ goHome, selectedMovieId }) => {
         </>
       )}
       <p>{selectedMovieDetails.overview}</p>
+      {console.log(selectedMovieDetails.overview)}
       <p>{selectedMovieDetails.release_date}</p>
       <p>Runtime: {selectedMovieDetails.runtime}</p>
     </div>

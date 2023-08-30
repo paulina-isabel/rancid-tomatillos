@@ -5,14 +5,27 @@ describe("navigate to individual movie", () => {
       "https://rancid-tomatillos.herokuapp.com/api/v2/movies",
       {
         statusCode: 200,
-        fixture: "singleMovie.json",
+        fixture: "allMovies.json",
       }
-    ).visit("http://localhost:3000/");
+    )
+    .visit("http://localhost:3000/");
   });
 
   it("should show user landing page with all movies, titles, and release dates", () => {
+    cy.intercept(
+      "GET",
+      "https://rancid-tomatillos.herokuapp.com/api/v2/movies/760104",
+      {
+        statusCode: 200,
+        fixture: "singleMovie.json",
+      }
+    )
     cy.get(".card-container").find(".card").should("have.length", 4);
-    // cy.get(".image")
+    cy.get(".card").last().click()
+    // cy.contains('div', 'background-image')
+    cy.contains('p', 'In 1979')
+    cy.contains('p', '2022')
+    cy.contains('p', 'Runtime:')
   });
 });
 
