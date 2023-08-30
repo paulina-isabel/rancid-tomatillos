@@ -4,13 +4,11 @@ import { useState, useEffect } from "react";
 import AllMovies from "../AllMovies/AllMovies.js";
 import MovieDetail from "../MovieDetails/MovieDetail";
 import NavBar from "../NavBar/NavBar";
+import { Routes, Route } from 'react-router-dom';
 
 const App = () => {
   const [movies, setMovies] = useState(movieData);
-  const [allMoviesView, setAllMoviesView] = useState(true);
-  // const [singleMovieView, setSingleMovieView] = useState(false);
   const [error, setError] = useState(false);
-  const [selectedMovieId, setSelectedMovieId] = useState(null);
 
   const getAllMovieData = () => {
     fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
@@ -25,30 +23,18 @@ const App = () => {
         setError(true);
       });
   };
+
   useEffect(() => {
     getAllMovieData();
   }, []);
 
-
-  const handleClick = (id) => {
-    setSelectedMovieId(id);
-    setAllMoviesView(false);
-    // setSingleMovieView(true);
-  };
-
-  const goHome = () => {
-    setAllMoviesView(true);
-    // setSingleMovieView(false);
-  };
-
   return (
     <div className="App">
       <NavBar />
-      {allMoviesView ? (
-        <AllMovies movies={movies} handleClick={handleClick} />
-      ) : (
-        <MovieDetail goHome={goHome} selectedMovieId={selectedMovieId} />
-      )}
+      <Routes>
+        <Route path="/" element={<AllMovies movies={movies} />}/>
+        <Route path="/:id" element={<MovieDetail />}/>
+      </Routes>
     </div>
   );
 };
