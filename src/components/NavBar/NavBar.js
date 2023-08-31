@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   return (
-    <div style={{backgroundColor: 'black'}}>
+    <div className='header' style={{backgroundColor: 'black'}}>
       <div className='login'>
         <img src={popcorn} className='popcorn' alt='popcorn user icon'/>Welcome, tomatilloer!
       </div>

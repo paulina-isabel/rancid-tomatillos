@@ -40,6 +40,7 @@ describe("navigate to individual movie", () => {
       }
     );
     cy.location('pathname').should('eq', '/');
+    cy.get('.header').should('exist');
     cy.get(".card-container").find(".card").should("have.length", 4);
     cy.get(".card").first().click();
     cy.location('pathname').should('eq', '/1001835');
@@ -58,7 +59,7 @@ describe("navigate to individual movie", () => {
         statusCode: 500
       }
     ).visit("http://localhost:3000/1001835");
-    cy.get(".error-message").should('exist')
+    cy.get(".error-message").should('exist');
   })
 
   it('should display a helpful message to the user when an error occurs', () => {
@@ -69,7 +70,7 @@ describe("navigate to individual movie", () => {
         statusCode: 400
       }
     ).visit("http://localhost:3000/1001835");
-    cy.get(".error-message").should('exist')
+    cy.get(".error-message").should('exist');
   })
 
   it('should display a helpful message to the user when an error occurs', () => {
@@ -80,6 +81,6 @@ describe("navigate to individual movie", () => {
         statusCode: 300
       }
     ).visit("http://localhost:3000/1001835");
-    cy.get(".error-message").should('exist')
+    cy.get(".error-message").should('exist');
   })
 })
