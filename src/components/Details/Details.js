@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
 import arrow from '../../images/arrow.png';
+import Error from '../Error/Error';
 
 const Details = ({ selectedMovieDetails, detailsError }) => {
   return (
     <div>
       {detailsError ? (
-        <p>ERROR!!!!! :(</p>
+        <Error />
       ) : ( 
         <>
           {console.log(detailsError, 'this is details error in details page')}

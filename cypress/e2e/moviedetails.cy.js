@@ -58,6 +58,17 @@ describe("navigate to individual movie", () => {
         statusCode: 500
       }
     ).visit("http://localhost:3000/1001835");
-    cy.get(".login")
+    cy.get(".error-message").should('exist')
+  })
+
+  it('should display a helpful message to the user when an error occurs', () => {
+    cy.intercept(
+      "GET",
+      "https://rancid-tomatillos.herokuapp.com/api/v2/movies/1001835",
+      {
+        statusCode: 400
+      }
+    ).visit("http://localhost:3000/1001835");
+    cy.get(".error-message").should('exist')
   })
 })
