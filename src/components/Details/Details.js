@@ -9,7 +9,6 @@ const Details = ({ selectedMovieDetails, detailsError }) => {
         <Error />
       ) : ( 
         <>
-          {console.log(detailsError, 'this is details error in details page')}
           <Link to="/">
             <img src={arrow} className='arrow' alt='back arrow icon'/>
           </Link>
