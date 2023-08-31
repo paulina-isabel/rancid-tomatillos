@@ -1,8 +1,12 @@
 import './AllMovies.css'
 import MovieCard from '../MovieCard/MovieCard'
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 
-const AllMovies = ({ movies, handleClick, goHome }) => {
+const AllMovies = ({ movies, error }) => {
+
+  console.log(error, 'error in AllMovies')
+
   const allMovies = movies.movies.map(movie => {
     return (
       <MovieCard 
@@ -12,15 +16,18 @@ const AllMovies = ({ movies, handleClick, goHome }) => {
         release_date={movie.release_date}
         rating={movie.average_rating}
         key={movie.id}
-        handleClick={handleClick}
-        goHome={goHome}
       />
     )
   })
-
+  
   return (
     <div className='card-container'>
-      {allMovies}
+      {console.log(error, 'error in return')}
+      {error ? (
+      <p className='details-error-msg'> oops </p>
+      ) : (
+        allMovies
+      )}
     </div>
   )
 }
@@ -29,6 +36,4 @@ export default AllMovies
 
 AllMovies.propTypes = {
   movies: PropTypes.object,
-  handleClick: PropTypes.func,
-  goHome: PropTypes.func
 }

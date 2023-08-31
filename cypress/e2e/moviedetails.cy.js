@@ -5,7 +5,7 @@ describe("navigate to individual movie", () => {
       "https://rancid-tomatillos.herokuapp.com/api/v2/movies",
       {
         statusCode: 200,
-        fixture: "allMovies.json",
+        fixture: "allMovies.json"
       }
     ).visit("http://localhost:3000/");
   });
@@ -55,8 +55,9 @@ describe("navigate to individual movie", () => {
       "GET",
       "https://rancid-tomatillos.herokuapp.com/api/v2/movies/1001835",
       {
-        statusCode: 500,
+        statusCode: 500
       }
-    );
+    ).visit("http://localhost:3000/1001835");
+    cy.get(".login")
   })
-});
+})

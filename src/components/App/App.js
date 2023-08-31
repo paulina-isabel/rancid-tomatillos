@@ -1,5 +1,4 @@
 import "./App.css";
-import movieData from "../../movieData.js";
 import { useState, useEffect } from "react";
 import AllMovies from "../AllMovies/AllMovies.js";
 import MovieDetail from "../MovieDetails/MovieDetail";
@@ -25,6 +24,7 @@ const App = () => {
       })
       .catch((error) => {
         setError(true);
+        setLoading(false)
       });
   };
 
@@ -34,12 +34,13 @@ const App = () => {
 
   return (
     <div className="App">
+      {console.log(error, 'error in App return', loading, 'loading in App return')}
       <NavBar />
       {loading ? (
         <p>Loading...</p>
        ) : (
       <Routes>
-        <Route path="/" element={<AllMovies movies={movies} />}/>
+        <Route path="/" element={<AllMovies movies={movies} error={error}/>}/>
         <Route path="/:id" element={<MovieDetail />}/>
       </Routes>
       )}

@@ -1,7 +1,7 @@
 import "./MovieDetail.css";
 import { useState, useEffect } from "react";
-import arrow from '../../images/arrow.png'
 import { useParams, Link } from 'react-router-dom';
+import Details from "../Details/Details";
 
 const MovieDetail = () => {
   const [selectedMovieDetails, setSelectedMovieDetails] = useState({});
@@ -29,6 +29,7 @@ const MovieDetail = () => {
       })
       .catch((error) => {
         setDetailsError(true);
+        setDetailsLoading(false)        
       });
   };
 
@@ -39,19 +40,10 @@ const MovieDetail = () => {
   return (
     <div className="movie-detail-card" style={containerStyle}>
       <div className="overlay" >
-        {/* {detailsError ? <p>uh oh</p>} */}
         {detailsLoading ? (
           <p>Loading...</p>
         ) : (
-          <>
-          <Link to="/">
-            <img src={arrow} className='arrow' alt='back arrow icon'/>
-          </Link>
-            <p className="title"></p>
-            <p>{selectedMovieDetails.overview}</p>
-            <p>{selectedMovieDetails.release_date}</p>
-            <p>Runtime: {selectedMovieDetails.runtime} minutes</p>
-          </>
+          <Details selectedMovieDetails={selectedMovieDetails} detailsError={detailsError} />
         )}
       </div>
     </div>
