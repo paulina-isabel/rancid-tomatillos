@@ -1,0 +1,22 @@
+.details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.poster {
+  height: 40vh;
+}
+
+.arrow {
+  height: 30px;
+}
+
+.overview {
+  width: 40vw;
+}
+
+.back-home-link {
+  display: flex;
+  align-items: center;
+}

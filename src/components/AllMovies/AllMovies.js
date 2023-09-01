@@ -2,6 +2,7 @@ import './AllMovies.css'
 import MovieCard from '../MovieCard/MovieCard'
 import PropTypes from 'prop-types';
 import Error from '../Error/Error';
+import { correctReleaseDate } from '../../helperFunctions';
 
 const AllMovies = ({ movies, error }) => {
   let allMovies
@@ -13,7 +14,7 @@ const AllMovies = ({ movies, error }) => {
           id={movie.id}
           poster_path={movie.poster_path}
           title={movie.title}
-          release_date={movie.release_date}
+          release_date={correctReleaseDate(movie.release_date)}
           rating={movie.average_rating}
           key={movie.id}
         />
