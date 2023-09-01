@@ -16,7 +16,7 @@ const Details = ({ selectedMovieDetails, detailsError }) => {
           <Link to="/">
             <img src={arrow} className='arrow' alt='back arrow icon'/>
           </Link>
-          <img src={posterImage} className='poster' alt='movie-poster'/>
+          <img src={posterImage} className='poster' alt={selectedMovieDetails.title}/>
           <h1 className="title">{selectedMovieDetails.title}</h1>
           <h2 className="overview">{selectedMovieDetails.tagline}</h2>
           <p className="overview">{selectedMovieDetails.overview}</p>
