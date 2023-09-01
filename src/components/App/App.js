@@ -9,6 +9,7 @@ const App = () => {
   const [movies, setMovies] = useState({});
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false);
+  
 
   const getAllMovieData = () => {
     fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
