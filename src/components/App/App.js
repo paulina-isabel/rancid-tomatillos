@@ -32,6 +32,7 @@ const App = () => {
     getAllMovieData();
   }, []);
 
+
   return (
     <div className="App">
       {console.log(error, 'error in App return', loading, 'loading in App return')}
