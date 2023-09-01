@@ -4,10 +4,7 @@
   flex-wrap: wrap;
   padding: 4vh;
   cursor: pointer;
-  /* max-width: 15vw; */
   width: 250px;
-  /* position: relative; */
-  /* overflow: hidden; */
 }
 
 .card:hover .image {
