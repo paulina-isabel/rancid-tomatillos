@@ -8,50 +8,52 @@ import { useState, useEffect } from 'react';
 import { correctReleaseDate } from '../../helperFunctions';
 
 const AllMovies = ({ movies, error }) => {
-  const [selectedOption, setSelectedOption] = useState("")
+  const [selectedOption, setSelectedOption] = useState("Select an option")
+  const [allMovies, setAllMovies] = useState([])
   
-  let allMovies
+  let clip
 
   if (movies.movies) {
-    allMovies = movies.movies.map(movie => {
+    clip = allMovies.map(movie => {
       return (
         <MovieCard 
-          id={movie.id}
-          poster_path={movie.poster_path}
-          title={movie.title}
-          release_date={correctReleaseDate(movie.release_date)}
-          rating={movie.average_rating}
-          key={movie.id}
+        id={movie.id}
+        poster_path={movie.poster_path}
+        title={movie.title}
+        release_date={correctReleaseDate(movie.release_date)}
+        rating={movie.average_rating}
+        key={movie.id}
         />
-      )
-    })
-  }
-
-  const handleDropdownChange = (event) => {
-    setSelectedOption(event.target.value);
-    allMovies = sortMovies(movies, selectedOption)
-  };
-
+        )
+      })
+    }
+    
+    const handleDropdownChange = () => {
+     sortMovies(movies, selectedOption)
+    };
+    
     useEffect(() => {
-      sortMovies(movies, selectedOption)
-    }, [selectedOption])
-
+      console.log("useEffect IS IN THE BUILDING")
+    setAllMovies(movies.movies)
+  }, [movies])
+  
   const sortMovies = (movies, selectedOption) => {
-    return movies.movies.sort((a, b) => {
+    const sortedMovies =  movies.movies.sort((a, b) => {
       if (selectedOption === "High") {
-        return a.average_rating - b.average_rating
+        return b.average_rating - a.average_rating
       } else if (selectedOption === "Low") {
-          return b.average_rating - a.average_rating
+          return a.average_rating - b.average_rating
       }
     })
+      setAllMovies(sortedMovies)
   }
-  let sortedMovies = sortMovies(movies)
+  // let sortedMovies = sortMovies(movies)
   
   return (
   <div>
     <div>
       <label htmlFor="dropdown">Sort By:</label>
-      <select id="dropdown" value={selectedOption} onChange={handleDropdownChange}>
+      <select id="dropdown" value={selectedOption} onChange={(event) => setSelectedOption(event.target.value)} onClick={handleDropdownChange}>
         <option>Select an option</option>
         <option value="High">High to Low</option>
         <option value="Low">Low to High</option>
@@ -61,7 +63,7 @@ const AllMovies = ({ movies, error }) => {
       {error ? (
         <Error />
       ) : (
-        allMovies
+        clip
       )}
     </div>
   </div>
