@@ -18,7 +18,7 @@ const MovieCard = ({ id, poster_path, title, release_date, rating }) => {
 export default MovieCard;
 
 MovieCard.propTypes = {
-  handleClick: PropTypes.func,
+  average_rating: PropTypes.number.isRequired,
   id: PropTypes.number.isRequired,
   poster_path: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
