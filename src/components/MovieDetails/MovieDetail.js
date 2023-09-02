@@ -1,6 +1,6 @@
 import "./MovieDetail.css";
 import { useState, useEffect } from "react";
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Details from "../Details/Details";
 
 const MovieDetail = () => {
