@@ -43,5 +43,6 @@ AllMovies.propTypes = {
     poster_path: PropTypes.string.isRequired,
     release_date: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired
-  })
+  }),
+  error: PropTypes.bool.isRequired
 }
