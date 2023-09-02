@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+<div align="center">
+<h1> Rancid Tomatillos </h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Technologies used:<br>
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+  <img src="https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e" />
+  <img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white"/>
+</div>
 
-In the project directory, you can run:
+## Abstract: 
+This application is designed to give users a page to view the ratings of movies from the years 2020-2022. On the landing page, they see a brief welcome to the app, movie posters for each film as well as the year it was released and its rating out of ten stars. If the user would like more information about a particular movie, they can click on the image or title associated and be taken to a details page. This page contains a tagline, a description of the film, the full release date as well as the runtime. From here, users may navigate back to the homepage, with the click of the back arrow, to discover other movies!
 
-### `npm start`
+# Preview of App:
+ <div align='center'> 
+  <img src= "https://user-images.githubusercontent.com/124719454/265209744-1f7ab038-8770-4b50-8a6f-fed67c39c27d.gif" alt='gif of movies and detail page' /></div>
+ 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation Instructions:
+- Fork this repository. 
+- Clone it to your local machine using the command: `git clone git@github.com:paulina-isabel/rancid-tomatillos.git`.
+- Run the command: `cd rancid-tomatillos`
+- Run the command: `npm install`
+- Run the command: `npm start`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Context:
+- We are currently enrolled in the seven month long Front End Engineering program at Turing School of Software and Design. This project was created as the first paired project of the third module of the program, which has a total of four modules. 
 
-### `npm test`
+## Contributors:
+- [Paulina Rubio](https://github.com/paulina-isabel)
+- [Lauren DeLaRosa](https://github.com/LDeLaRosa13)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Learning Goals:
+- Create a user interface that is easy to use and clearly displays information
+- Write DRY, reusable code that follows SRP and trends toward function purity
+- Make network requests (using fetch API)
+- Increase competency with React fundamentals
+- Test React components & asynchronous JS with end to end testing in Cypress
+- Create a multi-page UX using Router
+- Implement PropTypes
