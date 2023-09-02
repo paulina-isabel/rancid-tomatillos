@@ -37,12 +37,12 @@ export default AllMovies
 
 AllMovies.propTypes = {
   movies: PropTypes.shape({
-    average_rating: PropTypes.number.isRequired,
-    backdrop_path: PropTypes.string.isRequired,
-    id: PropTypes.number.isRequired,
-    poster_path: PropTypes.string.isRequired,
-    release_date: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired
+    average_rating: PropTypes.number,
+    backdrop_path: PropTypes.string,
+    id: PropTypes.number,
+    poster_path: PropTypes.string,
+    release_date: PropTypes.string,
+    title: PropTypes.string
   }),
   error: PropTypes.bool.isRequired
 }
