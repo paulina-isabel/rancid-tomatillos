@@ -35,7 +35,6 @@ const App = () => {
 
   return (
     <div className="App">
-      {console.log(error, 'error in App return', loading, 'loading in App return')}
       <NavBar />
       {loading ? (
         <p>Loading...</p>
