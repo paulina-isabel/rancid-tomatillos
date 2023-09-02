@@ -36,5 +36,12 @@ const AllMovies = ({ movies, error }) => {
 export default AllMovies
 
 AllMovies.propTypes = {
-  movies: PropTypes.object,
+  movies: PropTypes.shape({
+    average_rating: PropTypes.number.isRequired,
+    backdrop_path: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+    poster_path: PropTypes.string.isRequired,
+    release_date: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired
+  })
 }
